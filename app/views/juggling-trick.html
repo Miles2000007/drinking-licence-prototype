@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">What is your most impressive juggling trick?</h1>
+
+      <form class="form" action="/check-your-answers" method="post">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="more-detail">
+            Tell us about it, yeah?
+          </label>
+          <span id="more-detail-hint" class="govuk-hint">
+            Do not include personal or financial information, like your National Insurance number or credit card details.
+          </span>
+          <textarea class="govuk-textarea" id="more-detail" name="juggling-trick" rows="5" aria-describedby="more-detail-hint">{{data['juggling-trick']}}</textarea>
+        </div>
+
+        <button class="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
